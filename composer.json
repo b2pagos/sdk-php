@@ -1,0 +1,28 @@
+{
+  "name": "b2pagos/sdk",
+  "description": "PHP SDK for integrating with the B2PAGOS payment gateway",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "B2Pagos",
+      "email": "dev@b2pagos.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "firebase/php-jwt": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "B2Pagos\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "scripts": {
+    "test": "phpunit --testdox"
+  }
+}
