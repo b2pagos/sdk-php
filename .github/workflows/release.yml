@@ -1,0 +1,17 @@
+name: Release to Packagist
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Packagist
+        run: |
+          curl -X POST https://packagist.org/api/update-package \
+          -d '{"repository":{"url":"https://github.com/b2pagos/sdk-php"}}' \
+          -H "Content-Type: application/json" \
+          -u "${{ secrets.PACKAGIST_USERNAME }}:${{ secrets.PACKAGIST_TOKEN }}"
